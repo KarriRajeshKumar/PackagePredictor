@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Package Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h2>🎯 CGPA Package Predictor</h2>
+        <p class="subtitle">Enter your CGPA to predict your salary package</p>
+        
+        <div class="input-group">
+            <label for="cgpa">Your CGPA (0-10 scale)</label>
+            <input type="number" id="cgpa" placeholder="e.g., 8.5" step="0.01" min="0" max="10" required>
+        </div>
+        
+        <button onclick="predictPackage()" class="predict-btn">
+            <span class="btn-text">Predict Package</span>
+            <span class="btn-loading" style="display: none;">Predicting...</span>
+        </button>
+        
+        <div id="predictionResult" class="result-container"></div>
+        
+        <div class="info-box">
+            <h3>💡 How it works</h3>
+            <ul>
+                <li>Enter your CGPA between 0 and 10</li>
+                <li>Get instant salary package prediction</li>
+                <li>Based on machine learning model</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
